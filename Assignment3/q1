@@ -1,1 +1,45 @@
+package assignment3;
+
+public class q1 {
+
+	public static void main(String[] args) {
+		Pair<Integer,String>p1=new Pair<>(20,"Anindita");
+		System.out.println(p1);
+		Pair<String,String>p2=new Pair<>("25","Shweta");
+		System.out.println(p2);
+
+	}
+
+}
+class Pair<K,V>
+{
+	private K key;
+	private V value;
+	Pair(K key, V value)
+	{
+		this.key=key;
+		this.value=value;
+	}
+	public K getkey()
+	{
+		return key;
+	}
+	public void setkey(K key)
+	{
+		this.key=key;
+		
+	}
+	public V getvalue()
+	{
+		return value;
+	}
+	public void setvalue(V value)
+	{
+		this.value=value;	
+	}
+	public String toString()
+	{
+		return key+" "+value;
+	}
+}
 
