@@ -1,0 +1,95 @@
+import java.util.ArrayList;
+import java.util.Collections;
+public class CarApp {
+
+	public static void main(String[] args) {
+		ArrayList<Car>l1=new ArrayList<>();
+		l1.add(new Car(2013,"Creta",10));
+		l1.add(new Car(2020,"Mg",13));
+		l1.add(new Car(2018,"Kia",20));
+		l1.add(new Car(2017,"Audi",45));
+		l1.add(new Car(2015,"Bmw",55));
+		;
+		Collections.sort(l1);
+		System.out.println(l1);
+		// TODO Auto-generated method stub
+
+	}
+	
+
+}
+class Car implements Comparable<Car>
+{
+	private int ModelNo;
+	private String name;
+	private int stock;
+	public Car(int ModelNo,String name,int stock)
+	{
+		this.ModelNo=ModelNo;
+		this.name=name;
+		this.stock=stock;
+		
+	}
+	public int getModelNo()
+	{
+		return ModelNo;
+	}
+	public void setModelNo(int ModelNo)
+	{
+		this.ModelNo=ModelNo;
+		
+	}
+	public String getname()
+	{
+		return name;
+	}
+	public void setname(String name)
+	{
+		this.name=name;
+		
+	}
+	public int getstock()
+	{
+		return stock;
+	}
+	public void setstock(int stock)
+	{
+		this.stock=stock;
+		
+	}
+	public String toString()
+	{
+		return ModelNo+" " +name+" "+stock;
+	}
+	public boolean equals(Object o)
+	{
+		if(o==null)
+			return false;
+		if(o==this)
+			return true;
+			if(o instanceof Car)
+			{
+			Car o1=(Car)o;
+			if(o1.stock==this.stock)
+				return true;
+			else
+				return false;
+			
+		   }
+			return false;
+		}
+	@Override
+	public int compareTo(Car car) {
+		if(this.equals(car))
+		{
+			return 0;
+		}
+		if(this.stock>car.stock)
+			return 1;
+		else
+			return -1;
+		// TODO Auto-generated method stub
+		
+	} 
+	
+}
