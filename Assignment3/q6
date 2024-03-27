@@ -1,0 +1,22 @@
+import java.util.*;
+public class q6 {
+
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		Set <Integer> t1=new TreeSet<>();
+		t1.add(10);
+		t1.add(20);
+		System.out.println(t1);
+		System.out.println("Enter a no");
+		int x=in.nextInt();
+		if(t1.contains(x))
+			System.out.println("No is present");
+		else
+			System.out.println("No is not present");
+		t1.remove(10);
+		System.out.println(t1);
+		// TODO Auto-generated method stub
+
+	}
+
+}
