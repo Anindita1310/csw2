@@ -1,0 +1,114 @@
+import java.util.*;
+
+public class q4 {
+	
+	public static void main(String[] args) 
+		{
+		LinkedList<Student> l1=new LinkedList<>();
+		
+		l1.add(new Student("Rohit",67,98.0));
+		l1.add(new Student("Ram",99,79.0));
+		l1.add(new Student("Satvik",23,92.0));
+		l1.add(new Student("Anindita",20,94.0));
+		System.out.println(l1);
+		System.out.println("No of students in list "+l1.size());
+		Student students=new Student("Rohit",67,98.0);
+		check(students,l1);
+		Student stu=new Student("Ram",99,79.0);
+		remove(stu,l1);
+		
+		
+	    }
+		public static void check(Student s1,LinkedList l1) {
+			if(l1.contains(s1))
+				System.out.println("Student exists in the list");
+			else 
+				System.out.println("Student does not exist");
+			
+		}
+		public static void remove(Student s1,LinkedList l1) {
+			if(l1.remove(s1))
+				System.out.println("Student object removed");
+			else 
+				System.out.println("Student not found");
+			
+		}
+	}
+		
+		// TODO Auto-generated method stub;
+
+	
+
+	
+
+	
+		// TODO Auto-generated method stub
+		
+	
+
+
+class Student
+{
+	String name;
+	int age;
+	double mark;
+	public Student(String name,int age,double mark)
+	{
+		this.name=name;
+		this.age=age;
+		this.mark=mark;
+		
+	}public String getname()
+	{
+		return name;
+	}
+	public void setname(String name)
+	{
+		this.name=name;
+		
+	}
+	public int getage()
+	{
+		return age;
+	}
+	public void setage(int age)
+	{
+		this.age=age;
+		
+	}
+	public double getmark()
+	{
+		return mark;
+	}
+	public void setmark(double mark)
+	{
+		this.mark=mark;
+		
+	}
+	public String toString()
+	{
+		return name+" " +age+" "+mark;
+	}
+	
+	
+	public boolean equals(Object o)
+	{
+		if(o==null)
+			return false;
+		if(o==this)
+			return true;
+			if(o instanceof Student)
+			{
+			Student o1=(Student)o;
+			if(o1.mark==this.mark&& o1.age==this.age&&o1.name==this.name)
+				return true;
+			else
+				return false;
+			
+		   }
+			return false;
+		}
+	
+	
+}
+
