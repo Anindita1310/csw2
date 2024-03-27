@@ -1,0 +1,73 @@
+public class q6 {
+
+	public static void main(String[] args) {
+		Animal a1=new Animal("OSWALD","golden","GERMAN SHEPHERD");
+		System.out.println(a1+"its hashcode is"+a1.hashCode());
+		Animal a2=new Animal("GEORGE","BROWN","LABRADOR");
+		System.out.println(a2+" its hashcode is"+ a2.hashCode());
+		// TODO Auto-generated method stub
+
+	}
+
+}
+class Animal
+{
+	private String name;
+	private String color;
+	private String type;
+	Animal(String name,String color,String type)
+	{
+		this.name=name;
+		this.color=color;
+		this.type=type;
+	}
+	public  String getname()
+	{
+		return name;
+	}
+	public void setname(String name)
+	{
+	  this.name=name;
+	  
+	}
+	public String  getcolor()
+	{
+		return color;
+	}
+	public void setcolor(String color)
+	{
+	  this.color=color;
+	  
+	}
+	public  String gettype()
+	{
+		return type;
+	}
+	public void settype(String type)
+	{
+	  this.type=type;
+	}
+	public String toString()
+	{
+		return name+ " "+color+" "+type;
+	}
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		int r1=0;
+		if(color!=null&& name!=null && type!=null)
+		{
+			r1=r1+color.hashCode();
+			r1=r1+name.hashCode();
+			r1=r1+type.hashCode();
+			return r1;
+			
+		}
+		else
+		{
+			return 0;
+		}
+		
+	}
+	
+}
