@@ -1,0 +1,90 @@
+public class q3 {
+
+	public static void main(String[] args) {
+		Car c1=new Car("12456","Honda",500);
+		System.out.println(c1);
+		Car c2=new Car("12656","Mercedes",400);
+		System.out.println(c2);
+		if(c1.compareTo(c2)>0)
+			System.out.println("SECOND CAR has more price");
+		else if(c1.compareTo(c2)<0)
+			System.out.println("First car has more price");
+		else
+			System.out.println("Both cars have same price");
+		// TODO Auto-generated method stub
+
+	}
+
+}
+class Car implements Comparable<Car>
+{
+	private String model;
+	private String color;
+	private int speed;
+	Car(String model,String color,int speed)
+	{
+		this.model=model;
+		this.color=color;
+		this.speed=speed;
+		
+	}
+	public  String getmodel()
+	{
+		return model;
+	}
+	public void setmodel(String model)
+	{
+	  this.model=model;
+	  
+	}
+	public  String getcolor()
+	{
+		return color;
+	}
+	public void setcolor(String color)
+	{
+	  this.color=color;
+	  
+	}
+	public  int getspeed()
+	{
+		return speed;
+	}
+	public void setspeed(int speed)
+	{
+	  this.speed=speed;
+	  
+	}
+	public String toString()
+	{
+		return model+""+color+" "+speed;
+	}
+	
+	public int compareTo(Car o)
+	{
+		if(this.equals(o))
+			return 0;
+		 if(this.speed<o.speed)
+			return 1;
+		else
+			return -1;
+	}
+	public boolean equals(Object o)
+	{
+		if(o==null)
+			return false;
+		if(o==this)
+			return true;
+			if(o instanceof Car)
+			{
+			Car o1=(Car)o;
+			if(o1.speed==this.speed)
+				return true;
+			else
+				return false;
+			
+		   }
+			return false;
+		}
+	
+}
