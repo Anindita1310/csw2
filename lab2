@@ -1,0 +1,41 @@
+public class Student <T1>{
+	String name;
+	T1 rollno;
+	int age;
+	Student(String name,T1 rollno,int age)
+	{
+		this.name=name;
+		this.rollno=rollno;
+		this.age=age;
+	}
+	void display()
+	{
+		System.out.println("name is"+this.name);
+		System.out.println("roll no is"+this.rollno);
+		System.out.println("age is"+this.age);
+		
+	}
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		
+		Student<T1>obj1=(Student<T1>)obj;
+		if ((this.rollno.equals(obj1.rollno))&&((this.name.equals(obj1.name))) )
+				return true;
+		
+		else
+			return false;
+	}
+	public static void main(String[] args) {
+		Student<Integer> obj=new Student<Integer>("Rohit",10,50);
+		obj.display();
+		Student<String> obj1=new Student<String>("Rohit","100",50);
+		obj1.display();
+		System.out.println(obj.equals(obj1));
+		// TODO Auto-generated method stub
+
+	}
+
+}
