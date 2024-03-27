@@ -1,0 +1,64 @@
+public class Treemap {
+
+	public static void main(String[] args) {
+		TreeMap<String,Address>t1=new TreeMap<>();
+		t1.put("Anindita", new Address(10,"JSr","Consultant"));
+		t1.put("Rohit", new Address(20,"JSr","Con"));
+		 Set<Map.Entry<String, Address> > entries 
+         = t1.entrySet(); 
+
+     
+     for (Map.Entry<String, Address> entry : entries) { 
+         System.out.println(entry.getKey() + "->"
+                            + entry.getValue()); 
+     } 
+	
+	}
+
+}
+class Address
+{
+	int plotno;
+	String at;
+	String post;
+	public Address(int plotno,String at,String post)
+	{
+		this.plotno=plotno;
+		this.at=at;
+		this.post=post;
+	}
+	public int getplotno()
+	{
+		return plotno;
+	}
+	public void setplotno(int plotno)
+	{
+		this.plotno=plotno;
+		
+	}
+	public String getat()
+	{
+		return at;
+	}
+	public void setat(String at)
+	{
+		this.at=at;
+		
+	}
+	public String getpost()
+	{
+		return post;
+	}
+	public void setpost(String post)
+	{
+		this.post=post;
+		
+	}
+	public String toString()
+	{
+		return plotno+" "+at+" "+post;
+	}
+
+
+	
+}
