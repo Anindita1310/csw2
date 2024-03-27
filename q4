@@ -1,0 +1,113 @@
+import java.util.*;
+
+public class q4 {
+
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		Student s1[]=new Student[4];
+		s1[0]=new Student("RAKESH",5,98.5);
+		s1[1]=new Student("rohit",9,87);
+		s1[2]=new Student("ram",11,11.7);
+		s1[3]=new Student("raghav",7,100);
+		for(int i=0;i<4;i++)
+		{
+			System.out.println(s1[i]);
+		}
+		
+		Student key=new Student("RAKESH",5,98.5);
+		Student r1=search(s1,key);
+		if(r1!=null)
+		{
+			System.out.println("Student found");
+		}
+		else
+		{
+			System.out.println("Student not found");
+		}
+		
+		
+		// TODO Auto-generated method stub
+
+	}
+	public static Student search(Student arr1[],Student key)
+	{
+		for(int i=0;i<arr1.length;i++)
+		{
+			if(arr1[i].compareTo(key)==0)
+				return arr1[i];
+			
+		}
+		return null;
+	}
+
+}
+class Student implements Comparable<Student>
+{
+	private String name;
+	private int rn;
+	private double totalMark;
+	Student(String name,int rn,double totalMark)
+	{
+		this.name=name;
+		this.rn=rn;
+		this.totalMark=totalMark;
+	}
+	public  String getname()
+	{
+		return name;
+	}
+	public void setname(String name)
+	{
+	  this.name=name;
+	  
+	}
+	public int  getrollno()
+	{
+		return rn;
+	}
+	public void setrollno(int rn)
+	{
+	  this.rn=rn;
+	  
+	}
+	public  double gettotalMark()
+	{
+		return totalMark;
+	}
+	public void setprice(double totalMark)
+	{
+	  this.totalMark=totalMark;
+	}
+	public String toString()
+	{
+		return name+ " "+rn+" "+totalMark;
+	}
+	public int compareTo(Student o)
+	{
+		if(this.equals(o))
+			return 0;
+		 if(this.totalMark<o.totalMark)
+			return 1;
+		else
+			return -1;
+	}
+	public boolean equals(Object o)
+	{
+		if(o==null)
+			return false;
+		if(o==this)
+			return true;
+			if(o instanceof Student)
+			{
+			Student o1=(Student)o;
+			if(o1.totalMark==this.totalMark)
+				return true;
+			else
+				return false;
+			
+		   }
+			return false;
+		}
+	
+	
+}
