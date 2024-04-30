@@ -1,0 +1,100 @@
+import java.util.*;
+
+public class Library {
+	private Map<Integer, Book> books;
+
+    public Library() {
+        books = new HashMap<>();
+        books.put(1, new Book(1, "Book1", "Author1", 10));
+        books.put(2, new Book(2, "Book2", "Author2", 20));
+    }
+
+    public void displayBooks() {
+        for (Map.Entry<Integer, Book> entry : books.entrySet()) {
+            System.out.println(entry.getValue());
+        }
+    }
+
+    public boolean checkBookName(String name) {
+        for (Book b1 : books.values()) {
+            if (b1.getname().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+       }
+
+       public void removeBook(int key) {
+           books.remove(key);
+       }
+
+       public static void main(String[] args) {
+           Library library = new Library();
+           library.displayBooks();
+           System.out.println("Is Book1 present in the map? " + library.checkBookName("Book1"));
+           library.removeBook(1);
+           System.out.println("Is Book1 present in the map after removal? " + library.checkBookName("Book1"));
+       }
+   }
+		
+		
+
+		
+		// TODO Auto-generated method stub
+
+	
+	
+
+
+class Book
+{
+	int id;
+	String name;
+	String author;
+	int quantity;
+	Book(int id,String name,String author,int quantity)
+	{
+		this.id=id;
+		this.author=author;
+		this.name=name;
+		this.quantity=quantity;
+		
+	}
+	public int getid()
+	{
+		return id;
+	}
+	public void setid(int id)
+	{
+		this.id=id;
+	}
+	public String getname()
+	{
+		return name;
+	}
+	public void setname(String name)
+	{
+		this.name=name;
+	}
+	public String getauthor()
+	{
+		return author;
+	}
+	public void setauthor(String author)
+	{
+		this.author=author;
+	}
+	public int getquantity()
+	{
+		return quantity;
+	}
+	public void setquantity(int quantity)
+	{
+		this.quantity=quantity;
+	}
+	public String toString()
+	{
+		return id+" "+name+" "+author+" "+quantity;
+	}
+}
+
