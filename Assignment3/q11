@@ -1,0 +1,23 @@
+import java.util.*;
+public class q11 {
+
+	public static void main(String[] args) {
+		int arr[]= {6,9,2,3,5,7,8};
+		HashMap <Integer,Integer>h1=new HashMap<>();
+		for(int i=0;i<arr.length;i++)
+		{
+			h1.put(arr[i], h1.getOrDefault(i,0));
+		}
+		for(int i=1;i<=10;i++)
+		{
+			if(!h1.containsKey(i))
+			{
+			System.out.println(i+"is missing");
+			break;
+			}
+		}
+		// TODO Auto-generated method stub
+
+	}
+
+}
